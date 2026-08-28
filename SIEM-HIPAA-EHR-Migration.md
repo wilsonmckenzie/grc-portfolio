@@ -27,17 +27,18 @@ The primary business and regulatory objective was resolving critical HIPAA compl
 
 ## Technical Solution & Implementation Architecture
 
-[ On-Premises Servers & Endpoints ] ──( Azure Monitor Agents )──┐
-│
-[ Azure Active Directory (Azure AD) ] ──( Native Cloud Connectors )──► [ Azure Log Analytics Workspace ]
-│                   │
-[ eClinicalWorks Cloud EHR ] ──────────( Secure API / Log Ingestion )─┘                   ▼
-[ Microsoft Sentinel SIEM ]
-│
-┌───────────────────────┴───────────────────────┐
-▼                                               ▼
-[ KQL Detection & Alert Logic ]                [ RBAC & Defensible Audit Trails ]
-
+```text
+[ On-Premises Endpoints ] ──( Azure Monitor Agents )──┐
+                                                      │
+[ Azure Active Directory ] ─( Native Cloud Connector )─► [ Azure Log Analytics Workspace ]
+                                                      │                 │
+[ eClinicalWorks Cloud ] ───( Secure Log Ingestion )──┘                 ▼
+                                                            [ Microsoft Sentinel SIEM ]
+                                                                        │
+                                                ┌───────────────────────┴───────────────────────┐
+                                                ▼                                               ▼
+                                    [ KQL Threat Detection Rules ]                 [ RBAC & Defensible Audit Trails ]
+```
 
 ### 1. Centralized Log Ingestion & Cloud Workspace
 * Provisioned an **Azure Log Analytics Workspace** configured for encrypted ingestion and long-term retention of audit trails.
