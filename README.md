@@ -21,7 +21,7 @@ MSCIA-credentialed cybersecurity specialist uniting hands-on technical execution
 ### 1. Cloud-Based SIEM for HIPAA-Compliant EHR Migration *(WGU Capstone Excellence Award)*
 * **Focus:** Microsoft Sentinel, Azure AD, HIPAA Security Rule (45 CFR § 164.312), NIST SP 800-66r2
 * **Overview:** Engineered an audit-ready hybrid SIEM logging and monitoring architecture to resolve compliance gaps during EHR cloud migration.
-* [Read Case Study & View Deliverables →](./SIEM-HIPAA-EHR-Migration)
+* [Read Case Study & View Deliverables →](./SIEM-HIPAA-EHR-Migration.pdf)
 
 ### 2. Cloud Security & Risk Governance Framework for Healthcare EHR
 * **Focus:** NIST SP 800-53 Rev. 5, HIPAA Security/Privacy, Cloud IAM, Risk Management
