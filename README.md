@@ -1,6 +1,6 @@
 # McKenzie Wilson, MSCIA
 **Governance, Risk & Compliance | Information Assurance | Legal Operations**  
-[Email](mailto:griggmckenzie@gmail.com) • [LinkedIn](https://linkedin.com) • Upstate, South Carolina
+[Email](mailto:griggmckenzie@gmail.com) • [LinkedIn](www.linkedin.com/in/mckenzie-wilson-46381418b) • Upstate, South Carolina
 
 ---
 
