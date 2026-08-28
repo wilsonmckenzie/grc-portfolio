@@ -1,0 +1,72 @@
+# Cloud-Based SIEM for HIPAA-Compliant EHR Migration
+
+**Author:** McKenzie Wilson, MSCIA  
+**Credentials:** Recipient of the WGU Capstone Excellence Award | ISC2 SSCP | CompTIA CySA+  
+**Focus Areas:** Cloud Security Architecture • HIPAA Security Rule (45 CFR § 164.312) • NIST SP 800-66r2 • Microsoft Sentinel SIEM  
+
+---
+
+## 📄 Full Project Document
+* [📥 Download Complete Capstone Proposal (PDF)](./assets/Cloud-Based-SIEM-HIPAA-EHR.pdf)
+
+---
+
+## Executive Summary
+This project engineered an end-to-end security information and event management (SIEM) implementation for a healthcare practice migrating its on-premises Electronic Health Record (EHR) system (eClinicalWorks) and directory infrastructure (Azure Active Directory) into a hybrid cloud model. 
+
+The primary business and regulatory objective was resolving critical HIPAA compliance gaps in centralized audit logging, real-time threat visibility, and ePHI data protection across hybrid endpoints and cloud services.
+
+---
+
+## Problem Statement & Regulatory Drivers
+* **Lack of Centralized Audit Logging:** Prior on-premises infrastructure lacked consolidated security monitoring, failing to satisfy the mandatory audit controls required under the HIPAA Security Rule.
+* **HIPAA Technical Safeguard Mandates (45 CFR § 164.312):** Requires covered entities to implement hardware, software, and procedural mechanisms that record and examine activity in information systems containing or using Electronic Protected Health Information (ePHI).
+* **NIST SP 800-66r2 Alignment:** Used federal guidelines to map HIPAA administrative, physical, and technical safeguards directly to SIEM logging architectures.
+
+---
+
+## Technical Solution & Implementation Architecture
+
+[ On-Premises Servers & Endpoints ] ──( Azure Monitor Agents )──┐
+│
+[ Azure Active Directory (Azure AD) ] ──( Native Cloud Connectors )──► [ Azure Log Analytics Workspace ]
+│                   │
+[ eClinicalWorks Cloud EHR ] ──────────( Secure API / Log Ingestion )─┘                   ▼
+[ Microsoft Sentinel SIEM ]
+│
+┌───────────────────────┴───────────────────────┐
+▼                                               ▼
+[ KQL Detection & Alert Logic ]                [ RBAC & Defensible Audit Trails ]
+
+
+### 1. Centralized Log Ingestion & Cloud Workspace
+* Provisioned an **Azure Log Analytics Workspace** configured for encrypted ingestion and long-term retention of audit trails.
+* Deployed **Azure Monitor Agents** across local clinical endpoints and servers to forward system, access, and security event logs to Sentinel.
+* Configured native **Azure Active Directory (Azure AD)** connectors to stream authentication, privileged role escalations, and directory changes in real time.
+
+### 2. Detection Rules, Threat Analytics & RBAC
+* Developed custom KQL (Kusto Query Language) correlation queries to detect account anomalies, brute-force patterns, and suspicious access to ePHI.
+* Implemented strict **Role-Based Access Control (RBAC)** within Microsoft Sentinel to ensure only authorized security personnel have visibility into system audit logs.
+
+### 3. Procedural Framework & Operational Handover
+* Structured rollout using the **EDO4SIEM** (Evaluation, Deployment, Operation for SIEM) waterfall methodology.
+* Authored standard operating procedures (SOPs), incident escalation runbooks, and staff training guides to enable independent operational maintenance and audit readiness.
+
+---
+
+## Key Project Milestones & Deliverables
+
+| Phase / Milestone | Core Deliverable | Regulatory & Technical Impact |
+| :--- | :--- | :--- |
+| **Log & Asset Mapping** | Comprehensive Log Source Inventory | Identified all ePHI repositories and authentication boundaries across on-prem and cloud systems. |
+| **Workspace & SIEM Provisioning** | Azure Log Analytics + Sentinel Workspace | Established encrypted, central repository for high-fidelity audit trail ingestion. |
+| **Access Controls & Alerting** | RBAC Configuration & KQL Analytics Rules | Automated threat alerting for unauthorized access attempts and privilege escalation. |
+| **Hybrid Connector Rollout** | Azure Monitor Agents + Azure AD Connectors | Unified telemetry across legacy infrastructure and modern cloud EHR environments. |
+| **Operational Enablement** | Incident Runbook & Staff Training Program | Built internal competency to monitor, tune, and report on security incidents independently. |
+
+---
+
+## Outcomes & Defensibility
+* **100% Audit Readiness:** Achieved compliance with 45 CFR § 164.312(b) (Audit Controls) and transmission security requirements.
+* **Hybrid Threat Visibility:** Reduced incident detection windows by aggregating identity logs and endpoint events into single-pane dashboards.
+* **Defensible Data Governance:** Established immutable audit logging, ensuring legally sound chain-of-custody tracking for forensic reviews.
